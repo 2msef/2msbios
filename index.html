@@ -80,22 +80,30 @@ nav {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* ===== ОБНОВЛЁННЫЙ ЛОГОТИП ===== */
 .logo {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    background: linear-gradient(135deg, #8e2de2, #00d4ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    width: 44px;
+    height: 44px;
     cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
     transition: all 0.3s;
 }
 
-.logo:hover {
-    transform: scale(1.05);
-    filter: brightness(1.2);
+.logo:hover img {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 0 20px rgba(142, 45, 226, 0.5);
 }
+/* ================================ */
 
 .nav-links {
     display: flex;
@@ -620,7 +628,6 @@ footer {
     font-size: 14px;
 }
 
-/* ===== MUSIC PLAYER WIDGET ===== */
 .music-widget {
     position: fixed;
     bottom: 25px;
@@ -730,6 +737,12 @@ footer {
     position: relative;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(142, 45, 226, 0.3);
+}
+
+.album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .album-art.playing {
@@ -1101,7 +1114,9 @@ footer {
 
 <!-- Navigation -->
 <nav>
-    <div class="logo">erdkid.xyz</div>
+    <div class="logo">
+        <img src="logo.png" alt="erdkid">
+    </div>
     <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -1115,8 +1130,7 @@ footer {
 <!-- Hero Section -->
 <section class="hero" id="home">
     <span class="hero-badge">● Available for work</span>
-    <h1>Welcome to<br>my space</h1>
-    <p>Привет! Я создаю цифровые впечатления, которые остаются в памяти. Давай создадим что-то крутое вместе.</p>
+    <h1>Welcome to<br>my bio</h1>
     <div class="btn-group">
         <a href="#about" class="btn btn-primary">Узнать больше</a>
         <a href="#contact" class="btn btn-secondary">Связаться</a>
@@ -1145,12 +1159,12 @@ footer {
                         <span class="about-avatar-text">EX</span>
                     </div>
                     <div class="about-info">
-                        <h3>erdkid</h3>
+                        <h3>2ms</h3>
                         <span class="about-role">Developer & Creator</span>
                         <p class="about-description">
-                            Привет! Меня зовут erdkid. Я увлекаюсь созданием крутых веб-проектов, 
-                            экспериментирую с дизайном и технологиями. Люблю минимализм в коде, 
-                            но яркие решения в визуале. Это моё личное пространство в интернете.
+                            Привет! Меня зовут 2ms (Даниил). Я учусь созданием сайтов, 
+                            так же являюсь тех сотрудником для плейсов в Roblox. 
+                            Так же создаю ботов для телеграмма.
                         </p>
                         
                         <div class="about-details">
@@ -1158,7 +1172,7 @@ footer {
                                 <span class="detail-icon">📍</span>
                                 <div class="detail-text">
                                     <div class="detail-label">Location</div>
-                                    <div class="detail-value">Интернет</div>
+                                    <div class="detail-value">Finland</div>
                                 </div>
                             </div>
                             <div class="detail-item">
@@ -1166,20 +1180,6 @@ footer {
                                 <div class="detail-text">
                                     <div class="detail-label">Status</div>
                                     <div class="detail-value">Online</div>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">💼</span>
-                                <div class="detail-text">
-                                    <div class="detail-label">Work</div>
-                                    <div class="detail-value">Freelance</div>
-                                </div>
-                            </div>
-                            <div class="detail-item">
-                                <span class="detail-icon">🎯</span>
-                                <div class="detail-text">
-                                    <div class="detail-label">Focus</div>
-                                    <div class="detail-value">Web Dev</div>
                                 </div>
                             </div>
                         </div>
@@ -1190,11 +1190,7 @@ footer {
                                 <span class="skill-tag">HTML5</span>
                                 <span class="skill-tag">CSS3</span>
                                 <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">React</span>
                                 <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">UI/UX</span>
-                                <span class="skill-tag">Figma</span>
                             </div>
                         </div>
                     </div>
@@ -1210,69 +1206,28 @@ footer {
         <div class="section-header">
             <div class="section-label">// What I Do</div>
             <h2 class="section-title">Чем я занимаюсь</h2>
-            <p class="section-subtitle">Мои основные направления и интересы</p>
         </div>
         
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">💻</div>
-                <h3>Web Development</h3>
-                <p>Создаю современные веб-приложения с акцентом на производительность и пользовательский опыт.</p>
+                <div class="feature-icon">🛒</div>
+                <h3>Resale</h3>
+                <p>Перепродажа аккаунтов STEAM а так же HVH аккаунты</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🎨</div>
-                <h3>UI/UX Design</h3>
-                <p>Проектирую интуитивные интерфейсы, которые делают взаимодействие с продуктом приятным.</p>
+                <div class="feature-icon">🤖</div>
+                <h3>Telegramm bot</h3>
+                <p>Поддерживаю телеграмм ботов для проектов роблокс</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h3>Creative Projects</h3>
-                <p>Экспериментирую с новыми технологиями и создаю уникальные цифровые проекты.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>Responsive Design</h3>
-                <p>Все мои проекты идеально работают на любых устройствах — от телефона до десктопа.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>Performance</h3>
-                <p>Оптимизирую всё, что можно оптимизировать. Скорость — это важно.</p>
+                <div class="feature-icon">🤝</div>
+                <h3>Cooperation</h3>
+                <p>Сотрудничаю с начинающим проектом Roblox</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🌐</div>
-                <h3>Open Source</h3>
-                <p>Делюсь своими проектами с сообществом и вношу вклад в open source.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Stats Section -->
-<section id="stats">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-label">// Numbers</div>
-            <h2 class="section-title">Цифры</h2>
-            <p class="section-subtitle">Немного статистики обо мне и моей работе</p>
-        </div>
-        
-        <div class="stats-grid">
-            <div class="stat-card">
-                <div class="stat-number" data-target="50">0</div>
-                <div class="stat-label">Projects</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="3">0</div>
-                <div class="stat-label">Years</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="100">0</div>
-                <div class="stat-label">Commits</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" data-target="∞">0</div>
-                <div class="stat-label">Ideas</div>
+                <h3>Studying Web dev</h3>
+                <p>Обучаюсь созданию веб сайтов</p>
             </div>
         </div>
     </div>
@@ -1287,14 +1242,12 @@ footer {
         </div>
         
         <div class="social-links">
-            <a href="#" class="social-link" title="GitHub">GH</a>
-            <a href="#" class="social-link" title="Twitter">TW</a>
-            <a href="#" class="social-link" title="Discord">DC</a>
-            <a href="#" class="social-link" title="Email">@</a>
-            <a href="#" class="social-link" title="Telegram">TG</a>
+            <a href="#" class="https://vk.com/id1081425600" title="VK">VK</a>
+            <a href="#" class="https://discord.gg/teVYVjEmrk" title="Discord">DC</a>
+            <a href="#" class="https://t.me/farmblyadei" title="Telegram">TG</a>
         </div>
         
-        <p class="footer-text">© 2024 erdkid.xyz — Crafted with 🖤</p>
+        <p class="footer-text">© 2024 2ms  🖤</p>
     </div>
 </footer>
 
