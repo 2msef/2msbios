@@ -644,8 +644,7 @@ footer {
 }
 
 .music-widget.collapsed .player-content,
-.music-widget.collapsed .player-header span,
-.music-widget.collapsed .player-header .window-dots {
+.music-widget.collapsed .player-title {
     display: none;
 }
 
@@ -670,11 +669,6 @@ footer {
     justify-content: center;
 }
 
-.music-widget.collapsed .player-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px rgba(142, 45, 226, 0.6);
-}
-
 .player-header {
     background: rgba(0, 0, 0, 0.3);
     padding: 12px 15px;
@@ -684,12 +678,6 @@ footer {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     cursor: move;
     user-select: none;
-}
-
-.player-header-left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
 }
 
 .player-title {
@@ -744,14 +732,6 @@ footer {
     box-shadow: 0 8px 20px rgba(142, 45, 226, 0.3);
 }
 
-.album-art.playing::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%);
-    animation: shimmer 2s infinite;
-}
-
 .album-art.playing {
     animation: pulse-ring 2s ease-in-out infinite;
 }
@@ -776,10 +756,7 @@ footer {
     font-size: 12px;
 }
 
-/* Progress bar */
-.progress-section {
-    margin-bottom: 15px;
-}
+.progress-section { margin-bottom: 15px; }
 
 .progress-bar {
     width: 100%;
@@ -808,7 +785,6 @@ footer {
     font-family: 'Courier New', monospace;
 }
 
-/* Controls */
 .player-controls {
     display: flex;
     align-items: center;
@@ -852,7 +828,6 @@ footer {
     transform: scale(1.08);
 }
 
-/* Volume */
 .volume-section {
     display: flex;
     align-items: center;
@@ -898,7 +873,6 @@ footer {
     border: none;
 }
 
-/* Playlist */
 .playlist-section {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 15px;
@@ -919,18 +893,9 @@ footer {
     margin-bottom: 10px;
 }
 
-.playlist::-webkit-scrollbar {
-    width: 4px;
-}
-
-.playlist::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.playlist::-webkit-scrollbar-thumb {
-    background: rgba(142, 45, 226, 0.3);
-    border-radius: 2px;
-}
+.playlist::-webkit-scrollbar { width: 4px; }
+.playlist::-webkit-scrollbar-track { background: transparent; }
+.playlist::-webkit-scrollbar-thumb { background: rgba(142, 45, 226, 0.3); border-radius: 2px; }
 
 .playlist-item {
     display: flex;
@@ -943,14 +908,8 @@ footer {
     margin-bottom: 2px;
 }
 
-.playlist-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-.playlist-item.active {
-    background: rgba(142, 45, 226, 0.15);
-    border: 1px solid rgba(142, 45, 226, 0.2);
-}
+.playlist-item:hover { background: rgba(255, 255, 255, 0.05); }
+.playlist-item.active { background: rgba(142, 45, 226, 0.15); border: 1px solid rgba(142, 45, 226, 0.2); }
 
 .playlist-item-num {
     color: #606070;
@@ -960,10 +919,7 @@ footer {
     text-align: center;
 }
 
-.playlist-item-info {
-    flex: 1;
-    min-width: 0;
-}
+.playlist-item-info { flex: 1; min-width: 0; }
 
 .playlist-item-name {
     color: #c0c0c0;
@@ -974,9 +930,7 @@ footer {
     text-overflow: ellipsis;
 }
 
-.playlist-item.active .playlist-item-name {
-    color: #c9a7ff;
-}
+.playlist-item.active .playlist-item-name { color: #c9a7ff; }
 
 .playlist-item-time {
     color: #606070;
@@ -984,11 +938,8 @@ footer {
     font-family: 'Courier New', monospace;
 }
 
-.playlist-item.active .playlist-item-time {
-    color: #8e2de2;
-}
+.playlist-item.active .playlist-item-time { color: #8e2de2; }
 
-/* File upload button */
 .upload-btn {
     width: 100%;
     padding: 8px;
@@ -1012,11 +963,8 @@ footer {
     color: #d4b8ff;
 }
 
-.upload-btn input {
-    display: none;
-}
+.upload-btn input { display: none; }
 
-/* Loading screen */
 .loader {
     position: fixed;
     top: 0;
@@ -1032,7 +980,6 @@ footer {
 }
 
 .loader.hidden { opacity: 0; visibility: hidden; }
-
 .loader-content { text-align: center; }
 
 .loader-spinner {
@@ -1351,20 +1298,18 @@ footer {
     </div>
 </footer>
 
-<!-- ===== MUSIC PLAYER WIDGET ===== -->
+<!-- Music Player Widget -->
 <div class="music-widget" id="musicWidget">
     <div class="player-header">
-        <div class="player-header-left">
-            <span class="player-title">~/music/player</span>
-        </div>
-        <button class="player-toggle" id="playerToggle" title="Свернуть">−</button>
+        <span class="player-title">~/music/player</span>
+        <button class="player-toggle" id="playerToggle">−</button>
     </div>
     
     <div class="player-content">
         <div class="now-playing">
             <div class="album-art" id="albumArt">🎵</div>
-            <div class="song-title" id="songTitle">Загрузите треки</div>
-            <div class="song-artist" id="songArtist">через кнопку ниже</div>
+            <div class="song-title" id="songTitle">Выбери трек</div>
+            <div class="song-artist" id="songArtist">erdkid</div>
         </div>
         
         <div class="progress-section">
@@ -1387,16 +1332,14 @@ footer {
         
         <div class="volume-section">
             <span class="volume-icon" id="volumeIcon">🔊</span>
-            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
+            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="50">
         </div>
         
         <div class="playlist-section">
             <div class="playlist-title">Плейлист</div>
-            <div class="playlist" id="playlist">
-                <!-- Playlist items will be added here -->
-            </div>
+            <div class="playlist" id="playlist"></div>
             <label class="upload-btn">
-                <span>＋</span> Загрузить MP3 файлы
+                <span>＋</span> Добавить свои треки
                 <input type="file" id="fileInput" accept="audio/*" multiple>
             </label>
         </div>
@@ -1412,15 +1355,12 @@ window.addEventListener('load', () => {
 });
 
 // Mobile menu
-const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+document.getElementById('menuToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('active');
 });
 
 document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => navLinks.classList.remove('active'));
+    link.addEventListener('click', () => document.getElementById('navLinks').classList.remove('active'));
 });
 
 // Smooth scroll
@@ -1428,18 +1368,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
 
 // Custom cursor
 const cursorDot = document.getElementById('cursorDot');
 const cursorOutline = document.getElementById('cursorOutline');
-
-let mouseX = 0, mouseY = 0;
-let outlineX = 0, outlineY = 0;
+let mouseX = 0, mouseY = 0, outlineX = 0, outlineY = 0;
 
 document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -1493,7 +1429,7 @@ const statsObserver = new IntersectionObserver((entries) => {
 const statsSection = document.querySelector('.stats-grid');
 if (statsSection) statsObserver.observe(statsSection);
 
-// Logo click easter egg
+// Logo easter egg
 let logoClicks = 0;
 document.querySelector('.logo').addEventListener('click', () => {
     logoClicks++;
@@ -1542,13 +1478,29 @@ document.querySelectorAll('.feature-card, .stat-card, .about-window').forEach(el
    MUSIC PLAYER LOGIC
    =========================================== */
 const audio = new Audio();
-let playlist = [];
+
+// ⬇️⬇️ ТВОИ ТРЕКИ ⬇️⬇️
+let playlist = [
+    {
+        name: "Lofi Chill",
+        artist: "erdkid",
+        url: "music/lofi.mp3"
+    },
+    {
+        name: "Synthwave Dream",
+        artist: "erdkid",
+        url: "music/synth.mp3"
+    }
+];
+// ⬆️⬆️ ⬆️⬆️
+
 let currentIndex = 0;
 let isPlaying = false;
 let isShuffle = false;
-let repeatMode = 0; // 0 = off, 1 = all, 2 = one
+let repeatMode = 0;
 
-// DOM elements
+audio.volume = 0.5;
+
 const playBtn = document.getElementById('playBtn');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
@@ -1568,21 +1520,15 @@ const fileInput = document.getElementById('fileInput');
 const playerToggle = document.getElementById('playerToggle');
 const musicWidget = document.getElementById('musicWidget');
 
-// Initial volume
-audio.volume = 0.7;
-
-// Toggle player widget
+// Toggle player
 playerToggle.addEventListener('click', () => {
     musicWidget.classList.toggle('collapsed');
     playerToggle.textContent = musicWidget.classList.contains('collapsed') ? '♪' : '−';
-    playerToggle.title = musicWidget.classList.contains('collapsed') ? 'Развернуть' : 'Свернуть';
 });
 
-// Make widget draggable
-let isDragging = false;
-let dragOffsetX, dragOffsetY;
+// Drag widget
+let isDragging = false, dragOffsetX, dragOffsetY;
 const playerHeader = document.querySelector('.player-header');
-
 playerHeader.addEventListener('mousedown', (e) => {
     if (e.target.closest('.player-toggle')) return;
     isDragging = true;
@@ -1590,21 +1536,14 @@ playerHeader.addEventListener('mousedown', (e) => {
     dragOffsetY = e.clientY - musicWidget.offsetTop;
     musicWidget.style.transition = 'none';
 });
-
 document.addEventListener('mousemove', (e) => {
     if (!isDragging) return;
-    const x = e.clientX - dragOffsetX;
-    const y = e.clientY - dragOffsetY;
-    musicWidget.style.left = x + 'px';
-    musicWidget.style.top = y + 'px';
+    musicWidget.style.left = (e.clientX - dragOffsetX) + 'px';
+    musicWidget.style.top = (e.clientY - dragOffsetY) + 'px';
     musicWidget.style.right = 'auto';
     musicWidget.style.bottom = 'auto';
 });
-
-document.addEventListener('mouseup', () => {
-    isDragging = false;
-    musicWidget.style.transition = '';
-});
+document.addEventListener('mouseup', () => isDragging = false);
 
 // File upload
 fileInput.addEventListener('change', (e) => {
@@ -1613,23 +1552,18 @@ fileInput.addEventListener('change', (e) => {
         if (file.type.startsWith('audio/')) {
             const url = URL.createObjectURL(file);
             const name = file.name.replace(/\.[^/.]+$/, "");
-            playlist.push({
-                name: name,
-                artist: 'Локальный файл',
-                url: url,
-                duration: null
-            });
+            playlist.push({ name, artist: 'Загружено', url, duration: null });
         }
     });
     renderPlaylist();
-    if (playlist.length > 0 && !audio.src) {
-        loadTrack(0);
-    }
 });
 
-// Render playlist
 function renderPlaylist() {
     playlistEl.innerHTML = '';
+    if (playlist.length === 0) {
+        playlistEl.innerHTML = '<div style="color:#606070;font-size:11px;text-align:center;padding:15px;">Плейлист пуст. Загрузи MP3 файлы ↓</div>';
+        return;
+    }
     playlist.forEach((track, index) => {
         const item = document.createElement('div');
         item.className = 'playlist-item' + (index === currentIndex ? ' active' : '');
@@ -1640,13 +1574,12 @@ function renderPlaylist() {
             </div>
             <span class="playlist-item-time">${track.duration || '--:--'}</span>
         `;
-        item.addEventListener('click', () => loadTrack(index));
+        item.addEventListener('click', () => loadTrack(index, true));
         playlistEl.appendChild(item);
     });
 }
 
-// Load track
-function loadTrack(index) {
+function loadTrack(index, autoPlay = true) {
     if (playlist.length === 0) return;
     currentIndex = index;
     const track = playlist[index];
@@ -1654,28 +1587,24 @@ function loadTrack(index) {
     songTitle.textContent = track.name;
     songArtist.textContent = track.artist;
     renderPlaylist();
-    audio.play().then(() => {
-        isPlaying = true;
-        updatePlayButton();
-    }).catch(err => console.log('Autoplay prevented:', err));
+    if (autoPlay) {
+        audio.play().then(() => { isPlaying = true; updatePlayButton(); })
+        .catch(err => console.log('Play error:', err));
+    }
 }
 
-// Play/Pause
 function togglePlay() {
     if (playlist.length === 0) {
-        fileInput.click();
+        alert('Сначала загрузи MP3 файлы через кнопку "Добавить свои треки"');
         return;
     }
     if (isPlaying) {
         audio.pause();
         isPlaying = false;
     } else {
-        if (!audio.src && playlist.length > 0) {
-            loadTrack(currentIndex);
-        } else {
-            audio.play();
-            isPlaying = true;
-        }
+        if (!audio.src) loadTrack(currentIndex, true);
+        else audio.play();
+        isPlaying = true;
     }
     updatePlayButton();
 }
@@ -1686,76 +1615,48 @@ function updatePlayButton() {
 }
 
 playBtn.addEventListener('click', togglePlay);
-
-// Previous
 prevBtn.addEventListener('click', () => {
     if (playlist.length === 0) return;
     currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
-    loadTrack(currentIndex);
+    loadTrack(currentIndex, true);
 });
-
-// Next
 nextBtn.addEventListener('click', () => {
     if (playlist.length === 0) return;
-    nextTrack();
-});
-
-function nextTrack() {
     if (isShuffle && playlist.length > 1) {
-        let newIndex;
-        do {
-            newIndex = Math.floor(Math.random() * playlist.length);
-        } while (newIndex === currentIndex);
-        currentIndex = newIndex;
+        let n;
+        do { n = Math.floor(Math.random() * playlist.length); } while (n === currentIndex);
+        currentIndex = n;
     } else {
         currentIndex = (currentIndex + 1) % playlist.length;
     }
-    loadTrack(currentIndex);
-}
+    loadTrack(currentIndex, true);
+});
 
-// Shuffle
 shuffleBtn.addEventListener('click', () => {
     isShuffle = !isShuffle;
     shuffleBtn.style.background = isShuffle ? 'rgba(142, 45, 226, 0.3)' : '';
     shuffleBtn.style.color = isShuffle ? '#c9a7ff' : '';
 });
 
-// Repeat
 repeatBtn.addEventListener('click', () => {
     repeatMode = (repeatMode + 1) % 3;
-    if (repeatMode === 0) {
-        repeatBtn.style.background = '';
-        repeatBtn.style.color = '';
-        repeatBtn.textContent = '🔁';
-    } else if (repeatMode === 1) {
-        repeatBtn.style.background = 'rgba(142, 45, 226, 0.3)';
-        repeatBtn.style.color = '#c9a7ff';
-        repeatBtn.textContent = '🔁';
-    } else {
-        repeatBtn.style.background = 'rgba(142, 45, 226, 0.3)';
-        repeatBtn.style.color = '#c9a7ff';
-        repeatBtn.textContent = '🔂';
-    }
+    const isActive = repeatMode > 0;
+    repeatBtn.style.background = isActive ? 'rgba(142, 45, 226, 0.3)' : '';
+    repeatBtn.style.color = isActive ? '#c9a7ff' : '';
+    repeatBtn.textContent = repeatMode === 2 ? '🔂' : '🔁';
 });
 
-// Volume
 volumeSlider.addEventListener('input', (e) => {
     audio.volume = e.target.value / 100;
-    updateVolumeIcon();
-});
-
-function updateVolumeIcon() {
     if (audio.volume === 0) volumeIcon.textContent = '🔇';
     else if (audio.volume < 0.4) volumeIcon.textContent = '🔈';
     else if (audio.volume < 0.7) volumeIcon.textContent = '🔉';
     else volumeIcon.textContent = '🔊';
-}
+});
 
-// Progress bar
 audio.addEventListener('timeupdate', () => {
     if (audio.duration) {
-        const progress = (audio.currentTime / audio.duration) * 100;
-        progressFill.style.width = progress + '%';
+        progressFill.style.width = ((audio.currentTime / audio.duration) * 100) + '%';
         currentTimeEl.textContent = formatTime(audio.currentTime);
         durationEl.textContent = formatTime(audio.duration);
     }
@@ -1774,7 +1675,7 @@ audio.addEventListener('ended', () => {
         audio.currentTime = 0;
         audio.play();
     } else if (repeatMode === 1 || currentIndex < playlist.length - 1) {
-        nextTrack();
+        nextBtn.click();
     } else {
         isPlaying = false;
         updatePlayButton();
@@ -1784,35 +1685,24 @@ audio.addEventListener('ended', () => {
 progressBar.addEventListener('click', (e) => {
     if (!audio.duration) return;
     const rect = progressBar.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const percent = x / rect.width;
-    audio.currentTime = percent * audio.duration;
+    audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
 });
 
-function formatTime(seconds) {
-    if (isNaN(seconds)) return '0:00';
-    const min = Math.floor(seconds / 60);
-    const sec = Math.floor(seconds % 60);
-    return `${min}:${sec.toString().padStart(2, '0')}`;
+function formatTime(s) {
+    if (isNaN(s)) return '0:00';
+    return `${Math.floor(s/60)}:${Math.floor(s%60).toString().padStart(2,'0')}`;
 }
 
-// Keyboard shortcuts
 document.addEventListener('keydown', (e) => {
     if (e.target.tagName === 'INPUT') return;
     if (e.code === 'Space' && playlist.length > 0) {
         e.preventDefault();
         togglePlay();
     }
-    if (e.code === 'ArrowRight' && e.shiftKey) {
-        nextTrack();
-    }
-    if (e.code === 'ArrowLeft' && e.shiftKey) {
-        prevBtn.click();
-    }
 });
 
-// Initial render
-updateVolumeIcon();
+// Init
+renderPlaylist();
 </script>
 </body>
 </html>
